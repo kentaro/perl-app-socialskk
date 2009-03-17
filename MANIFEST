@@ -21,6 +21,7 @@ inc/Test/More.pm
 lib/App/SocialSKK.pm
 lib/App/SocialSKK/Base.pm
 lib/App/SocialSKK/Plugin.pm
+lib/App/SocialSKK/Plugin/HatenaBookmark.pm
 lib/App/SocialSKK/Plugin/SocialIME.pm
 lib/App/SocialSKK/Plugin/Wikipedia.pm
 lib/App/SocialSKK/Protocol.pm

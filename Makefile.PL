@@ -8,6 +8,7 @@ all_from 'lib/App/SocialSKK.pm';
 requires POE => '1.003';
 requires 'URI';
 requires 'Jcode';
+requires 'XML::RSS';
 requires 'YAML::Syck';
 requires 'File::HomeDir';
 requires 'UNIVERSAL::require';

@@ -46,7 +46,7 @@ Wikipedia
 
 =head1 DESCRIPTION
 
-App::SocialSKK::Plugin::SocialIME performs retrieval of candidates
+App::SocialSKK::Plugin::Wikipedia performs retrieval of candidates
 from Wikipedia suggest API.
 
 =head1 SEE ALSO
