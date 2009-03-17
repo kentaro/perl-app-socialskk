@@ -1,0 +1,23 @@
+use inc::Module::Install;
+
+name     'App-SocialSKK';
+author   'Kentaro Kuribayashi, <kentarok@cpan.org>';
+license  'MIT';
+all_from 'lib/App/SocialSKK.pm';
+
+requires POE => '1.003';
+requires 'URI';
+requires 'Jcode';
+requires 'YAML::Syck';
+requires 'File::HomeDir';
+requires 'UNIVERSAL::require';
+requires 'LWP::UserAgent::POE';
+requires 'Encode::JavaScript::UCS';
+requires 'Class::Accessor::Lvalue::Fast';
+
+build_requires 'Test::More';
+use_test_base;
+author_tests   'xt';
+install_script 'bin/socialskk.pl';
+auto_include_deps;
+WriteAll;
