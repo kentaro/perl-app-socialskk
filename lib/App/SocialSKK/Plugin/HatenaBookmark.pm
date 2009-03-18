@@ -8,8 +8,9 @@ __PACKAGE__->mk_accessors(qw(limit));
 
 sub get_candidates {
     my ($self, $text) = @_;
-    my @candidates;
+    return if ($text || '') eq '';
 
+    my @candidates;
     $text = Jcode->new($text, 'euc')->utf8;
     if ($text =~ /(?:はてぶにんききじ|ほってんとり)/) {
         my $rss   = XML::RSS->new(version => '1.0');

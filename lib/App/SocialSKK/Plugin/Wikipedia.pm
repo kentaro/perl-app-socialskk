@@ -11,6 +11,8 @@ use base qw(App::SocialSKK::Plugin);
 
 sub get_candidates {
     my ($self, $text) = @_;
+    return if ($text || '') eq '';
+
     $text = Jcode->new($text, 'euc')->utf8;
     my $uri  = URI->new('http://ja.wikipedia.org/w/api.php');
        $uri->query_param(action    => 'opensearch');

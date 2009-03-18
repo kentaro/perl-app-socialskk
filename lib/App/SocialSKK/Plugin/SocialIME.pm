@@ -7,6 +7,8 @@ use base qw(App::SocialSKK::Plugin);
 
 sub get_candidates {
     my ($self, $text) = @_;
+    return if ($text || '') eq '';
+
     my $uri  = URI->new('http://www.social-ime.com/api/');
        $uri->query_param(string => $text);
     my $res = $self->ua->get($uri);

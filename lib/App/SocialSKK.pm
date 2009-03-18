@@ -30,7 +30,7 @@ sub init {
        $self->config  = {} if !$self->config;
        $self->plugins = [] if !$self->plugins;
 
-    my %ua_options = ref $self->config->{ua_options} eq 'HASH' ? %{$self->ua_options} : ();
+    my %ua_options = ref $self->config->{ua_options} eq 'HASH' ? %{$self->config->{ua_options}} : ();
     $self->ua ||= LWP::UserAgent::POE->new(
         timeout => 5,
         agent   => $self->get_version,
