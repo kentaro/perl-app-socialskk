@@ -60,10 +60,7 @@ some data from the Web.
 
   my $plugin = App::SocialSKK::Plugin::YourPlugin->new(\%config);
 
-Takes a EUC-JP string as an input and processes and returns candidates
-for the string.
-
-This method must be overridden by subclass.
+Creates and returns new object of the plugin.
 
 =back
 

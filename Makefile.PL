@@ -18,6 +18,10 @@ requires 'Encode::JavaScript::UCS';
 requires 'Class::Accessor::Lvalue::Fast';
 
 build_requires 'Test::More';
+build_requires 'Test::Class';
+build_requires 'Module::Collect';
+build_requires 'Filter::Util::Call';
+build_requires 'Net::Ping::External';
 use_test_base;
 author_tests   'xt';
 install_script 'bin/socialskk.pl';

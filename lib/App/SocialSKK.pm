@@ -14,6 +14,7 @@ our $VERSION = '0.01';
 __PACKAGE__->mk_accessors(qw(
     config
     hostname address port
+    ua
     protocol
     plugins
 ));
@@ -26,8 +27,17 @@ sub new {
 
 sub init {
     my $self = shift;
-       $self->load_plugins;
+       $self->config  = {} if !$self->config;
+       $self->plugins = [] if !$self->plugins;
 
+    my %ua_options = ref $self->config->{ua_options} eq 'HASH' ? %{$self->ua_options} : ();
+    $self->ua ||= LWP::UserAgent::POE->new(
+        timeout => 5,
+        agent   => $self->get_version,
+        %ua_options,
+    );
+
+    $self->load_plugins;
     $self->protocol = App::SocialSKK::Protocol->new;
     $self->protocol->on_get_version    = sub { $self->get_version           };
     $self->protocol->on_get_serverinfo = sub { $self->get_serverinfo        };
@@ -37,20 +47,13 @@ sub init {
 
 sub load_plugins {
     my $self   = shift;
-       $self->plugins = [] if !$self->plugins;
-    my %ua_options = ref $self->config->{ua_options} eq 'HASH' ? %{$self->ua_options} : ();
-    my $ua = LWP::UserAgent::POE->new(
-        timeout => 5,
-        agent   => $self->get_version,
-        %ua_options,
-    );
     my $prefix = sprintf '%s::Plugin', __PACKAGE__;
 
     for my $plugin (@{$self->config->{plugins}}) {
         my $module = join '::', $prefix, $plugin->{name};
            $module->use or croak(qq{Couldn't load plugin: $module});
         my %config = ref $plugin->{config} eq 'HASH' ? %{$plugin->{config}} : ();
-        push @{$self->plugins}, $module->new({(ua => $ua, %config)});
+        push @{$self->plugins}, $module->new({(ua => $self->ua, %config)});
     }
 }
 

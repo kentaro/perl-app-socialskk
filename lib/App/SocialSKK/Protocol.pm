@@ -14,7 +14,7 @@ __PACKAGE__->mk_accessors(values %dispatch_table);
 sub accept {
     my ($self, $input) = @_;
     return if !defined $input;
-    my ($code, $text) = $input =~ /^(\d)(.+)?\s*$/;
+    my ($code, $text) = $input =~ /^(\d)(.+)?\s*$/ismx;
     $self->dispatch($code, $text);
 }
 
