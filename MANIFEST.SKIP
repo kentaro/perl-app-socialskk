@@ -21,4 +21,4 @@
 ^[^/]+\.pl$
 ^\.shipit$
 ^\.PerlySenseProject/
-^covoered/
+^covered/

@@ -30,6 +30,7 @@ inc/Text/Glob.pm
 lib/App/SocialSKK.pm
 lib/App/SocialSKK/Base.pm
 lib/App/SocialSKK/Plugin.pm
+lib/App/SocialSKK/Plugin/Eijiro.pm
 lib/App/SocialSKK/Plugin/HatenaBookmark.pm
 lib/App/SocialSKK/Plugin/SocialIME.pm
 lib/App/SocialSKK/Plugin/Wikipedia.pm
@@ -42,6 +43,7 @@ t/compile.t
 t/lib/App/SocialSKK/Test.pm
 t/lib/App/SocialSKK/Test/Spec.pm
 t/socialskk-base.t
+t/socialskk-plugin-eijiro.t
 t/socialskk-plugin-socialime.t
 t/socialskk-plugin-wikipedia.t
 t/socialskk-plugin.t
