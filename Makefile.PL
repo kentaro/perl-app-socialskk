@@ -10,6 +10,7 @@ requires 'URI';
 requires 'Jcode';
 requires 'XML::RSS';
 requires 'YAML::Syck';
+requires 'Pod::Usage';
 requires 'File::HomeDir';
 requires 'UNIVERSAL::require';
 requires 'LWP::UserAgent::POE';

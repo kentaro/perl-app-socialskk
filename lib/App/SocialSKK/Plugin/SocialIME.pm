@@ -29,9 +29,6 @@ IME
   # Add a line like below into your .socialskk:
   plugins:
     - name: SocialIME
-      config:
-        ua_options:
-          timeout: 5
 
 =head1 DESCRIPTION
 

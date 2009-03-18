@@ -2,18 +2,11 @@ package App::SocialSKK::Plugin;
 use strict;
 use warnings;
 use base qw(App::SocialSKK::Base);
-use LWP::UserAgent::POE;
 
-__PACKAGE__->mk_accessors(qw(_ua ua_options));
+__PACKAGE__->mk_accessors(qw(ua));
 
 sub get_candidates {
     die 'This method must be overridden by subclass';
-}
-
-sub ua {
-    my $self = shift;
-    my %ua_options = ref $self->ua_options eq 'HASH' ? %{$self->ua_options} : ();
-    $self->_ua ||= LWP::UserAgent::POE->new(%ua_options);
 }
 
 1;
@@ -49,6 +42,9 @@ App::SocialSKK::Plugin - Baseclass of Social SKK Plugins
   # Then, add a line like below into your .socialskk:
   plugins:
     - name: YourPlugin
+      config:
+        foo: bar
+        baz: qux
 
 =head1 DESCRIPTION
 
@@ -62,12 +58,7 @@ some data from the Web.
 
 =over 4
 
-  my $plugin = App::SocialSKK::Plugin::YourPlugin->new({
-      ua_options  => {
-          timeout => 5,
-          agent   => 'App::SocialSKK::Plugin::YourPlugin',
-      },
-  });
+  my $plugin = App::SocialSKK::Plugin::YourPlugin->new(\%config);
 
 Takes a EUC-JP string as an input and processes and returns candidates
 for the string.
@@ -110,6 +101,8 @@ retrieval. You can use it to do with the data on the Web.
 =item * App::SocialSKK::Plugin::SocialIME
 
 =item * App::SocialSKK::Plugin::Wikipedia
+
+=item * App::SocialSKK::Plugin::HatenaBookmark
 
 =back
 

@@ -40,9 +40,6 @@ Wikipedia
   # Add a line like below into your .socialskk:
   plugins:
     - name: Wikipedia
-      config:
-        ua_options:
-          timeout: 5
 
 =head1 DESCRIPTION
 
