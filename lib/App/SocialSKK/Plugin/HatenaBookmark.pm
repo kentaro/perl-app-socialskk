@@ -2,6 +2,7 @@ package App::SocialSKK::Plugin::HatenaBookmark;
 use strict;
 use warnings;
 use XML::RSS;
+use Jcode;
 use base qw(App::SocialSKK::Plugin);
 
 __PACKAGE__->mk_accessors(qw(limit));
