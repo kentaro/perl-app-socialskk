@@ -142,6 +142,12 @@ plugins.
 
 =back
 
+=head1 REPOSITORY
+
+http://github.com/kentaro/perl-app-socialskk/tree/master
+
+Please give me feedbacks via GitHub repository above.
+
 =head1 SEE ALSO
 
 =over 4
