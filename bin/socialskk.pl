@@ -86,7 +86,8 @@ for candidates and returns results along with requests from client.
 
 =item -c|--config
 
-Sets a path to configuration file.
+Sets a path to configuration file. If not set, socialskk.pl tries to
+load $HOME/.socialskk instead.
 
 =item -p|--port
 

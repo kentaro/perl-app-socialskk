@@ -40,7 +40,7 @@ __END__
 
 =head1 NAME
 
-App::SocialSKK::Plugin::Wikipedia - Retrieves Candidates from
+App::SocialSKK::Plugin::HatenaBookmark - Retrieves Candidates from
 Hatena::Bookmark
 
 =head1 SYNOPSIS

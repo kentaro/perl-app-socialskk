@@ -9,7 +9,7 @@ use base qw(App::SocialSKK::Base);
 
 use App::SocialSKK::Protocol;
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 __PACKAGE__->mk_accessors(qw(
     config

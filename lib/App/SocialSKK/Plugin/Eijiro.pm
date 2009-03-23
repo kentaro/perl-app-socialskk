@@ -29,7 +29,7 @@ __END__
 
 =head1 NAME
 
-App::SocialSKK::Plugin::Wikipedia - Retrieves Candidates from Eijiro
+App::SocialSKK::Plugin::Eijiro - Retrieves Candidates from Eijiro
 
 =head1 SYNOPSIS
 
